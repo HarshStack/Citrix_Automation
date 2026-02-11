@@ -12,18 +12,17 @@ Features
 
 Ctrix/
 
-  collector.py          # Selenium: open amazon.in, paginate, save card screenshots
+  collector.py                   # Selenium: open amazon.in, paginate, save card screenshots
   
-  ocr_from_images.py    # OCR: read card_images, extract fields, GPU-filter, save CSV/XLSX
+  ocr_from_images.py             # OCR: read card_images, extract fields, GPU-filter, save CSV/XLSX
   
-  ocr_ext.py            # (optional module form) OCR helpers used by pipeline
+  ocr_ext.py                     # (optional module form) OCR helpers used by pipeline
   
-  filter_gpu.py         # (optional module) GPU include/exclude logic
+  filter_gpu.py                  # (optional module) GPU include/exclude logic
   
-  pipeline.py           # (optional) Orchestrates collector → OCR → export
+  pipeline.py                    # (optional) Orchestrates collector → OCR → export
   
-  card_images/          # Output from collector (PNG screenshots per card)
+  card_images/                   # Output from collector (PNG screenshots per card)
   
-  output/               # CSV/XLSX, debug artifacts
-  templates/            # (optional) if using image templates for RPA experiments
-  README.md
+  output/                        # CSV/XLSX, debug artifacts
+  
