@@ -45,9 +45,9 @@ Python packages:
 🧠 How It Works
 Hybrid Architecture
 
-[ Selenium ] --open amazon.in--> [ Search Results ]
+[ Selenium ] --   open amazon.in-->   [ Search Results ]
       |                                  |
-      |--element.screenshot() per card-->+--> [ card_images/*.png ]
+      |--  element.screenshot() per card  --> + --> [ card_images/*.png ]
                                           
 [ OCR Pipeline ] --Tesseract on card PNGs--> [ text ]
                 --> regex extract fields (title/price/rating)
