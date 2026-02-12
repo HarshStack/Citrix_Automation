@@ -13,20 +13,22 @@ Features
 <img width="1092" height="410" alt="image" src="https://github.com/user-attachments/assets/0186ba46-75f6-4994-be1d-ba601c08928c" />
 
 
+
 Requirements
 
 
-Python 3.11+
+- Python 3.11+
 
-Chrome (latest) + ChromeDriver compatible with your Chrome
+- Chrome (latest) + ChromeDriver compatible with your Chrome
 
-Tesseract OCR engine (Windows):
+- Tesseract OCR engine (Windows):
 
-tesseract.exe
+- tesseract.exe
 
-tessdata/eng.traineddata
+- tessdata/eng.traineddata
 
-Python packages:
+- Python packages: pip install selenium beautifulsoup4 pandas openpyxl pytesseract pillow opencv-python numpy python-pptx
+
 
 
 🧠 How It Works
