@@ -40,18 +40,24 @@ Hybrid Architecture
 
 OCR Preprocessing:
 
-Convert to grayscale,
-Upscale ×2 (helps OCR),
-Bilateral filter (denoise, preserve edges),
-Otsu threshold
+- Convert to grayscale,
+  
+- Upscale ×2 (helps OCR),
+  
+- Bilateral filter (denoise, preserve edges),
+  
+- Otsu threshold
 
 Field Extraction Heuristics:
 
-Title: longest non-price, non-rating line among first ~15 lines,
-Price: ₹ or comma-separated number (regex),
-Rating: x out of 5 (regex)
+- Title: longest non-price, non-rating line among first ~15 lines,
+  
+- Price: ₹ or comma-separated number (regex),
+  
+- Rating: x out of 5 (regex)
 
 GPU Filter:
-Include: RTX, GTX, GeForce, NVIDIA, Radeon, RX, AMD Radeon,
-Exclude: Intel, UHD, Iris, Integrated, UMA, Shared, Arc,
+- Include: RTX, GTX, GeForce, NVIDIA, Radeon, RX, AMD Radeon,
+  
+- Exclude: Intel, UHD, Iris, Integrated, UMA, Shared, Arc,
 
