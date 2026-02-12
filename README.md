@@ -10,24 +10,11 @@ Features
 
 🗂️ Project Structure
 
-Ctrix/
-
-  collector.py                   # Selenium: open amazon.in, paginate, save card screenshots
-  
-  ocr_from_images.py             # OCR: read card_images, extract fields, GPU-filter, save CSV/XLSX
-  
-  ocr_ext.py                     # (optional module form) OCR helpers used by pipeline
-  
-  filter_gpu.py                  # (optional module) GPU include/exclude logic
-  
-  pipeline.py                    # (optional) Orchestrates collector → OCR → export
-  
-  card_images/                   # Output from collector (PNG screenshots per card)
-  
-  output/                        # CSV/XLSX, debug artifacts
+<img width="1092" height="410" alt="image" src="https://github.com/user-attachments/assets/0186ba46-75f6-4994-be1d-ba601c08928c" />
 
 
 Requirements
+
 
 Python 3.11+
 
@@ -43,31 +30,26 @@ Python packages:
 
 
 🧠 How It Works
+
 Hybrid Architecture
 
-[ Selenium ] --   open amazon.in-->   [ Search Results ]
-      |                                  |
-      |--  element.screenshot() per card  --> + --> [ card_images/*.png ]
-                                          
-[ OCR Pipeline ] --Tesseract on card PNGs--> [ text ]
-                --> regex extract fields (title/price/rating)
-                --> GPU keywords filter (NVIDIA/AMD only)
-                --> save CSV + Excel
+<img width="881" height="348" alt="image" src="https://github.com/user-attachments/assets/071929fc-6bc8-40d5-88a9-8ff406d527b2" />
 
-OCR Preprocessing
 
-Convert to grayscale
-Upscale ×2 (helps OCR)
-Bilateral filter (denoise, preserve edges)
+OCR Preprocessing:
+
+Convert to grayscale,
+Upscale ×2 (helps OCR),
+Bilateral filter (denoise, preserve edges),
 Otsu threshold
 
-Field Extraction Heuristics
+Field Extraction Heuristics:
 
-Title: longest non-price, non-rating line among first ~15 lines
-Price: ₹ or comma-separated number (regex)
+Title: longest non-price, non-rating line among first ~15 lines,
+Price: ₹ or comma-separated number (regex),
 Rating: x out of 5 (regex)
 
-GPU Filter
-Include: RTX, GTX, GeForce, NVIDIA, Radeon, RX, AMD Radeon
-Exclude: Intel, UHD, Iris, Integrated, UMA, Shared, Arc
+GPU Filter:
+Include: RTX, GTX, GeForce, NVIDIA, Radeon, RX, AMD Radeon,
+Exclude: Intel, UHD, Iris, Integrated, UMA, Shared, Arc,
 
