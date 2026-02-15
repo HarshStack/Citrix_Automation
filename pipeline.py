@@ -25,8 +25,8 @@ DUMP_OCR_TEXT = True   # saves OCR text per card for debugging
 def main():
     # Setup OCR
     tess_exe, tessdata_dir, ocr_config = configure_tesseract()
-    print("✅ Tesseract EXE:", tess_exe)
-    print("✅ Tessdata:", tessdata_dir)
+    print(" Tesseract EXE:", tess_exe)
+    print(" Tessdata:", tessdata_dir)
 
     # Collect card screenshots
     collected = collect_card_screenshots(
@@ -66,7 +66,7 @@ def main():
         }
         results.append(row)
 
-        print(f"[GPU ✅] {len(results)}/{TARGET_COUNT} -> {row['title_model'][:70]} | {row['price']} | {row['rating']}")
+        print(f"[GPU present] {len(results)}/{TARGET_COUNT} -> {row['title_model'][:70]} | {row['price']} | {row['rating']}")
 
         if len(results) >= TARGET_COUNT:
             break
@@ -80,10 +80,11 @@ def main():
     with pd.ExcelWriter(out_xlsx, engine="openpyxl") as w:
         df.to_excel(w, index=False, sheet_name="GPU_Top10")
 
-    print("\n✅ Saved:", out_csv)
-    print("✅ Saved:", out_xlsx)
+    print("\n Saved:", out_csv)
+    print(" Saved:", out_xlsx)
     print("Total GPU laptops extracted:", len(df))
 
 
 if __name__ == "__main__":
+
     main()
