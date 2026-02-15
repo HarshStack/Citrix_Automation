@@ -189,10 +189,10 @@ def main():
             **meta
         }
 
-        # ✅ write to MongoDB immediately
+        # write to MongoDB 
         upsert_to_mongo(doc)
 
-        print(f" ✅ saved to MongoDB: {title[:70]} | {price} | {rating}\n")
+        print(f"  saved to MongoDB: {title[:70]} | {price} | {rating}\n")
 
         # optional: still collect for CSV
         results_for_csv.append({
@@ -211,4 +211,5 @@ def main():
     print("Total NVIDIA/AMD GPU laptops found:", len(df))
 
 if __name__ == "__main__":
+
     main()
