@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-from ocr_mongo import ocr_and_store  # ✅ new import
+from ocr_mongo import ocr_and_store 
 
 
 def is_blocked(page_source: str) -> bool:
@@ -128,7 +128,7 @@ def collect_cards_streaming_to_mongo(
                 except Exception:
                     continue
 
-                # ✅ Immediately OCR + store into MongoDB
+                
                 doc = ocr_and_store(
                     image_path=str(img_path),
                     asin=asin,
@@ -139,7 +139,7 @@ def collect_cards_streaming_to_mongo(
 
                 if doc:
                     stored_docs.append(doc)
-                    print(f" ✅ Mongo saved: {doc['title'][:60]} | {doc.get('price','')} | {doc.get('rating','')}")
+                    print(f" Mongo saved: {doc['title'][:60]} | {doc.get('price','')} | {doc.get('rating','')}")
                 else:
                     print(" -> skipped by OCR filters")
 
@@ -169,4 +169,5 @@ if __name__ == "__main__":
         base_dir=Path(__file__).parent,
         headless=False,
     )
+
     print("\nStored to MongoDB:", len(out))
